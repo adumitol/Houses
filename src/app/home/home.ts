@@ -1,9 +1,11 @@
-import {ChangeDetectorRef, Component, inject} from '@angular/core';
-import {HousingLocation} from '../housing-location/housing-location';
-import {HousingLocationInfo} from '../housinglocation';
-import {HousingService} from '../housing';
+import { Component, inject, signal } from '@angular/core';
+import { HousingLocation } from '../housing-location/housing-location';
+import { HousingLocationInfo } from '../housinglocation';
+import { HousingService } from '../housing';
+
 @Component({
     selector: 'app-home',
+    standalone: true,
     imports: [HousingLocation],
     template: `
     <section>
@@ -13,7 +15,7 @@ import {HousingService} from '../housing';
       </form>
     </section>
     <section class="results">
-      @for (housingLocation of filteredLocationList; track $index) {
+      @for (housingLocation of filteredLocationList(); track housingLocation.id) {
         <app-housing-location [housingLocation]="housingLocation" />
       }
     </section>
@@ -21,26 +23,25 @@ import {HousingService} from '../housing';
     styleUrls: ['./home.css'],
 })
 export class Home {
-    private readonly changeDetectorRef = inject(ChangeDetectorRef);
-    housingLocationList: HousingLocationInfo[] = [];
     housingService: HousingService = inject(HousingService);
-    filteredLocationList: HousingLocationInfo[] = [];
+    housingLocationList = signal<HousingLocationInfo[]>([]);
+    filteredLocationList = signal<HousingLocationInfo[]>([]);
+
     constructor() {
-        this.housingService
-            .getAllHousingLocations()
-            .then((housingLocationList: HousingLocationInfo[]) => {
-                this.housingLocationList = housingLocationList;
-                this.filteredLocationList = housingLocationList;
-                this.changeDetectorRef.markForCheck();
-            });
+        this.housingService.getAllHousingLocations().then((list) => {
+            this.housingLocationList.set(list);
+            this.filteredLocationList.set(list);
+        });
     }
+
     filterResults(text: string) {
         if (!text) {
-            this.filteredLocationList = this.housingLocationList;
+            this.filteredLocationList.set(this.housingLocationList());
             return;
         }
-        this.filteredLocationList = this.housingLocationList.filter((housingLocation) =>
-            housingLocation?.city.toLowerCase().includes(text.toLowerCase()),
+        const filtered = this.housingLocationList().filter((location) =>
+            location?.city.toLowerCase().includes(text.toLowerCase()),
         );
+        this.filteredLocationList.set(filtered);
     }
 }
