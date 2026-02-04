@@ -42,10 +42,10 @@ export class HousingLocationFormComponent {
         this.successMsg = '';
         this.errorMsg = '';
 
-        // Preparación del objeto según requerimientos
+        // Preparación del objeto
         const newHouse = {
             ...this.form.getRawValue(),
-            photo: "", // No se solicita en el formulario
+            photo: "", // No se solicita
             coordinate: { latitude: 0, longitude: 0 } // Valor por defecto
         };
 
