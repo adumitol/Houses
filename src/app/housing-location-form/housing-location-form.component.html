@@ -1,0 +1,62 @@
+<div class="container mt-5">
+    <h2 class="mb-4">Añadir nueva vivienda</h2>
+
+    @if (successMsg) {
+        <div class="alert alert-success">{{ successMsg }}</div>
+    }
+    @if (errorMsg) {
+        <div class="alert alert-danger">{{ errorMsg }}</div>
+    }
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="row g-3">
+            <div class="col-md-12">
+                <label class="form-label">Nombre *</label>
+                <input type="text" class="form-control" formControlName="name"
+                       [class.is-invalid]="form.controls.name.touched && form.controls.name.invalid">
+                <div class="invalid-feedback">Obligatorio (mín. 3 caracteres)</div>
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Ciudad *</label>
+                <input type="text" class="form-control" formControlName="city">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Estado *</label>
+                <input type="text" class="form-control" formControlName="state">
+            </div>
+
+            <div class="col-md-6">
+                <label class="form-label">Unidades disponibles *</label>
+                <input type="number" class="form-control" formControlName="availableUnits">
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Precio ($) *</label>
+                <input type="number" class="form-control" formControlName="price">
+            </div>
+
+            <div class="col-12 mt-3">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" formControlName="wifi" id="wifi">
+                    <label class="form-check-label" for="wifi">Wifi</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" formControlName="laundry" id="laundry">
+                    <label class="form-check-label" for="laundry">Lavandería</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" formControlName="available" id="available">
+                    <label class="form-check-label" for="available">Disponible</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <button type="submit" class="btn btn-primary" [disabled]="form.invalid || submitting">
+                @if (submitting) { <span class="spinner-border spinner-border-sm"></span> }
+                Guardar vivienda
+            </button>
+            <button type="button" class="btn btn-outline-secondary ms-2" (click)="cancel()">Cancelar</button>
+        </div>
+    </form>
+</div>

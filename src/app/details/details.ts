@@ -78,7 +78,7 @@ export class Details implements OnInit {
     constructor() {
         const housingLocationId = parseInt(this.route.snapshot.params['id'], 10);
 
-        // Obtenemos los datos de la vivienda (API o Fallback local)
+        // Obtenemos los datos de la vivienda
         this.housingService.getHousingLocationById(housingLocationId).then((location) => {
             this.housingLocation = location;
 

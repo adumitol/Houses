@@ -3,22 +3,27 @@ import {Home} from './home/home';
 import {RouterLink, RouterOutlet} from '@angular/router';
 
 @Component({
-  selector: 'app-root',
-  imports: [Home, RouterOutlet, RouterLink],
-  template: `
+    selector: 'app-root',
+    imports: [Home, RouterOutlet, RouterLink],
+    template: `
       <main>
-          <a [routerLink]="['/']">
-              <header class="brand-name">
+          <header class="brand-name">
+              <a [routerLink]="['/']">
                   <img class="brand-logo" src="/public/logo.svg" alt="logo" aria-hidden="true" />
-              </header>
-          </a>
+              </a>
+              
+              <button class="primary" type="button" [routerLink]="['/add-house']" style="margin-left: 20px;">
+                  + Nueva Vivienda
+              </button>
+          </header>
+
           <section class="content">
               <router-outlet />
           </section>
       </main>
   `,
-  styleUrls: ['./app.css'],
+    styleUrls: ['./app.css'],
 })
 export class App {
-  title = 'homes';
+    title = 'homes';
 }

@@ -1,7 +1,7 @@
 {
   "locations": [
     {
-      "id": 0,
+      "id": "0",
       "name": "Acme Fresh Start Housing",
       "city": "Chicago",
       "state": "IL",
@@ -17,7 +17,7 @@
       "available": true
     },
     {
-      "id": 1,
+      "id": "1",
       "name": "A113 Transitional Housing",
       "city": "Santa Monica",
       "state": "CA",
@@ -33,7 +33,7 @@
       "available": false
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Warm Beds Housing Support",
       "city": "Juneau",
       "state": "AK",
@@ -49,7 +49,7 @@
       "available": true
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Homesteady Housing",
       "city": "Chicago",
       "state": "IL",
@@ -65,7 +65,7 @@
       "available": true
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Happy Homes Group",
       "city": "Gary",
       "state": "IN",
@@ -81,7 +81,7 @@
       "available": true
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Hopeful Apartment Group",
       "city": "Oakland",
       "state": "CA",
@@ -97,7 +97,7 @@
       "available": true
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Seriously Safe Towns",
       "city": "Oakland",
       "state": "CA",
@@ -113,7 +113,7 @@
       "available": true
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Hopeful Housing Solutions",
       "city": "Oakland",
       "state": "CA",
@@ -123,13 +123,13 @@
       "laundry": true,
       "coordinate": {
         "latitude": 37.8055,
-        "longitude": -122.2730
+        "longitude": -122.273
       },
       "price": 1450,
       "available": true
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Seriously Safe Towns",
       "city": "Oakland",
       "state": "CA",
@@ -138,14 +138,14 @@
       "wifi": false,
       "laundry": false,
       "coordinate": {
-        "latitude": 37.8060,
-        "longitude": -122.2740
+        "latitude": 37.806,
+        "longitude": -122.274
       },
       "price": 1300,
       "available": true
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Capital Safe Towns",
       "city": "Portland",
       "state": "OR",
@@ -159,6 +159,54 @@
       },
       "price": 1600,
       "available": true
+    },
+    {
+      "id": "80be",
+      "name": "Adam",
+      "city": "malaga",
+      "state": "MA",
+      "availableUnits": 1,
+      "price": 10000,
+      "wifi": true,
+      "laundry": true,
+      "available": true,
+      "photo": "",
+      "coordinate": {
+        "latitude": 0,
+        "longitude": 0
+      }
+    },
+    {
+      "id": "2c4f",
+      "name": "asdas",
+      "city": "asda",
+      "state": "sdasda",
+      "availableUnits": 1,
+      "price": 10000,
+      "wifi": false,
+      "laundry": false,
+      "available": true,
+      "photo": "",
+      "coordinate": {
+        "latitude": 0,
+        "longitude": 0
+      }
+    },
+    {
+      "id": "fcf6",
+      "name": "aaaaa",
+      "city": "aaaa",
+      "state": "aaaaa",
+      "availableUnits": 1,
+      "price": 10000,
+      "wifi": true,
+      "laundry": false,
+      "available": true,
+      "photo": "",
+      "coordinate": {
+        "latitude": 0,
+        "longitude": 0
+      }
     }
   ]
 }
