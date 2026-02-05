@@ -159,54 +159,8 @@
       },
       "price": 1600,
       "available": true
-    },
-    {
-      "id": "80be",
-      "name": "Adam",
-      "city": "malaga",
-      "state": "MA",
-      "availableUnits": 1,
-      "price": 10000,
-      "wifi": true,
-      "laundry": true,
-      "available": true,
-      "photo": "",
-      "coordinate": {
-        "latitude": 0,
-        "longitude": 0
-      }
-    },
-    {
-      "id": "2c4f",
-      "name": "asdas",
-      "city": "asda",
-      "state": "sdasda",
-      "availableUnits": 1,
-      "price": 10000,
-      "wifi": false,
-      "laundry": false,
-      "available": true,
-      "photo": "",
-      "coordinate": {
-        "latitude": 0,
-        "longitude": 0
-      }
-    },
-    {
-      "id": "fcf6",
-      "name": "aaaaa",
-      "city": "aaaa",
-      "state": "aaaaa",
-      "availableUnits": 1,
-      "price": 10000,
-      "wifi": true,
-      "laundry": false,
-      "available": true,
-      "photo": "",
-      "coordinate": {
-        "latitude": 0,
-        "longitude": 0
-      }
     }
+
+
   ]
 }

@@ -40,7 +40,7 @@ export class HousingService implements HousingProvider {
         }
     }
 
-    submitApplication(firstName: string, lastName: string, email: string) {
+    submitApplication(firstName: string, lastName: string, email: string, date: string, message: string, privacidad: string) {
         console.log('Application received:', firstName, lastName, email);
     }
 
